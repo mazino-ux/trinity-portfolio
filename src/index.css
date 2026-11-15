@@ -1,0 +1,265 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg-canvas: #ffffff;
+  --bg-surface: #faf9fc;
+  --bg-subtle: #f3eff7;
+  --text-primary: #140822;
+  --text-secondary: #4e425e;
+  --text-muted: #766b85;
+  --border-hairline: rgba(59, 7, 100, 0.12);
+  --border-strong: rgba(59, 7, 100, 0.28);
+
+  --accent: #3b0764;
+  --accent-contrast: #ffffff;
+  --accent-soft: rgba(59, 7, 100, 0.08);
+  --accent-ring: rgba(59, 7, 100, 0.35);
+
+  --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+:root.dark {
+  --bg-canvas: #0b0711;
+  --bg-surface: #130d1d;
+  --bg-subtle: #1c132b;
+  --text-primary: #f7f4fb;
+  --text-secondary: #cbbfe0;
+  --text-muted: #9a8db3;
+  --border-hairline: rgba(233, 213, 255, 0.14);
+  --border-strong: rgba(233, 213, 255, 0.3);
+
+  --accent: #c084fc;
+  --accent-contrast: #140524;
+  --accent-soft: rgba(192, 132, 252, 0.14);
+  --accent-ring: rgba(192, 132, 252, 0.45);
+}
+
+/* Midnight Blue */
+:root[data-theme='midnight'] {
+  --bg-surface: #f7f9fc;
+  --bg-subtle: #edf2f8;
+  --text-primary: #0a1426;
+  --text-secondary: #384963;
+  --text-muted: #64748b;
+  --border-hairline: rgba(15, 41, 74, 0.12);
+  --border-strong: rgba(15, 41, 74, 0.28);
+  --accent: #0f294a;
+  --accent-contrast: #ffffff;
+  --accent-soft: rgba(15, 41, 74, 0.08);
+  --accent-ring: rgba(15, 41, 74, 0.35);
+}
+
+:root.dark[data-theme='midnight'] {
+  --bg-canvas: #060b14;
+  --bg-surface: #0d1524;
+  --bg-subtle: #131f33;
+  --text-primary: #f1f5f9;
+  --text-secondary: #b8c7de;
+  --text-muted: #8496b3;
+  --border-hairline: rgba(148, 163, 184, 0.16);
+  --border-strong: rgba(148, 163, 184, 0.32);
+  --accent: #60a5fa;
+  --accent-contrast: #061326;
+  --accent-soft: rgba(96, 165, 250, 0.14);
+  --accent-ring: rgba(96, 165, 250, 0.45);
+}
+
+/* Emerald */
+:root[data-theme='emerald'] {
+  --bg-surface: #f6faf8;
+  --bg-subtle: #eaf4ef;
+  --text-primary: #062119;
+  --text-secondary: #345449;
+  --text-muted: #5d7c71;
+  --border-hairline: rgba(6, 78, 59, 0.12);
+  --border-strong: rgba(6, 78, 59, 0.28);
+  --accent: #064e3b;
+  --accent-contrast: #ffffff;
+  --accent-soft: rgba(6, 78, 59, 0.08);
+  --accent-ring: rgba(6, 78, 59, 0.35);
+}
+
+:root.dark[data-theme='emerald'] {
+  --bg-canvas: #050f0c;
+  --bg-surface: #0a1914;
+  --bg-subtle: #10241d;
+  --text-primary: #effaf5;
+  --text-secondary: #b4d8ca;
+  --text-muted: #7da696;
+  --border-hairline: rgba(110, 231, 183, 0.15);
+  --border-strong: rgba(110, 231, 183, 0.32);
+  --accent: #34d399;
+  --accent-contrast: #032219;
+  --accent-soft: rgba(52, 211, 153, 0.14);
+  --accent-ring: rgba(52, 211, 153, 0.45);
+}
+
+/* Sunset Orange */
+:root[data-theme='sunset'] {
+  --bg-surface: #fcf8f6;
+  --bg-subtle: #f7ede8;
+  --text-primary: #240f06;
+  --text-secondary: #5c3d30;
+  --text-muted: #856558;
+  --border-hairline: rgba(154, 52, 18, 0.12);
+  --border-strong: rgba(154, 52, 18, 0.28);
+  --accent: #9a3412;
+  --accent-contrast: #ffffff;
+  --accent-soft: rgba(154, 52, 18, 0.08);
+  --accent-ring: rgba(154, 52, 18, 0.35);
+}
+
+:root.dark[data-theme='sunset'] {
+  --bg-canvas: #110906;
+  --bg-surface: #1b100b;
+  --bg-subtle: #261610;
+  --text-primary: #fdf4ef;
+  --text-secondary: #e2c1b3;
+  --text-muted: #ae8979;
+  --border-hairline: rgba(251, 146, 60, 0.16);
+  --border-strong: rgba(251, 146, 60, 0.34);
+  --accent: #fb923c;
+  --accent-contrast: #240c02;
+  --accent-soft: rgba(251, 146, 60, 0.14);
+  --accent-ring: rgba(251, 146, 60, 0.45);
+}
+
+/* Monochrome */
+:root[data-theme='monochrome'] {
+  --bg-surface: #f8f8f8;
+  --bg-subtle: #efefef;
+  --text-primary: #111111;
+  --text-secondary: #454545;
+  --text-muted: #707070;
+  --border-hairline: rgba(17, 17, 17, 0.12);
+  --border-strong: rgba(17, 17, 17, 0.28);
+  --accent: #111111;
+  --accent-contrast: #ffffff;
+  --accent-soft: rgba(17, 17, 17, 0.07);
+  --accent-ring: rgba(17, 17, 17, 0.35);
+}
+
+:root.dark[data-theme='monochrome'] {
+  --bg-canvas: #0a0a0a;
+  --bg-surface: #121212;
+  --bg-subtle: #1c1c1c;
+  --text-primary: #f5f5f5;
+  --text-secondary: #c4c4c4;
+  --text-muted: #8a8a8a;
+  --border-hairline: rgba(255, 255, 255, 0.14);
+  --border-strong: rgba(255, 255, 255, 0.3);
+  --accent: #f5f5f5;
+  --accent-contrast: #0a0a0a;
+  --accent-soft: rgba(255, 255, 255, 0.12);
+  --accent-ring: rgba(255, 255, 255, 0.45);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+      color 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono-tabular {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.theme-transition {
+  transition: background-color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom bubble cursor hides system cursor only when active on pointer:fine */
+html.bubble-cursor-active,
+html.bubble-cursor-active body,
+html.bubble-cursor-active a,
+html.bubble-cursor-active button,
+html.bubble-cursor-active input,
+html.bubble-cursor-active [role='button'] {
+  cursor: none !important;
+}
+
+/* 3D Pass Flip */
+.pass-perspective {
+  perspective: 1100px;
+}
+
+.pass-inner {
+  transform-style: preserve-3d;
+  transition: transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pass-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.pass-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.pass-face-back {
+  transform: rotateY(180deg);
+}
+
+/* Horizontal Marquee */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 26s linear infinite;
+}
+
+.marquee-wrapper:hover .marquee-track,
+.marquee-wrapper:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .pass-inner {
+    transition: none;
+  }
+}
